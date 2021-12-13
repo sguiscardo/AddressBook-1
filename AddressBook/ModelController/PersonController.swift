@@ -1,8 +1,8 @@
 //
-//  RecipeController.swift
-//  Recipe1
+//  PersonController.swift
+//  AddressBook
 //
-//  Created by DevMountain on 10/12/21.
+//  Created by Trevor Adcock on 10/12/21.
 //
 
 import Foundation
@@ -19,10 +19,10 @@ class PersonController {
         loadContactsFromDisk()
     }
     
-    // MARK: - Categories
+    // MARK: - Groups
     func createContactGroup(name: String = "Untitled Group", people: [Person] = []) {
-        let category = Group(name: name, people: people)
-        groups.append(category)
+        let group = Group(name: name, people: people)
+        groups.append(group)
         saveContactsToDisk()
     }
     
@@ -37,8 +37,8 @@ class PersonController {
         saveContactsToDisk()
     }
     
-    // MARK: - Recipes
-    func createPerson(name: String = "Untitled Recipe",
+    // MARK: - People
+    func createPerson(name: String = "New Contact",
                       address: String = "",
                       group: Group) {
         let person = Person(name: name, address: address)

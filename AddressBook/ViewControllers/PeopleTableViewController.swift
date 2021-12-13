@@ -1,8 +1,8 @@
 //
-//  RecipeTableViewController.swift
-//  Recipe1
+//  PeopleTableViewController.swift
+//  AddressBook
 //
-//  Created by DevMountain on 10/12/21.
+//  Created by Trevor Adcock on 10/12/21.
 //
 
 import UIKit
@@ -66,17 +66,17 @@ class PeopleTableViewController: UITableViewController {
         guard segue.identifier == "toPersonDetail",
               let personDetailViewController = segue.destination as? PersonDetailViewController,
               let selectedRow = tableView.indexPathForSelectedRow?.row else { return }
-        let recipe = filteredPeople[selectedRow]
-        personDetailViewController.person = recipe
+        let person = filteredPeople[selectedRow]
+        personDetailViewController.person = person
     }
     
     // MARK: - Actions
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
         guard let group = group else { return }
-        let oldRecipeCount = filteredPeople.count
+        let oldPersonCount = filteredPeople.count
         personController.createPerson(group: group)
-        let newRecipeCount = filteredPeople.count
-        guard newRecipeCount > oldRecipeCount else { return }
+        let newPersonCount = filteredPeople.count
+        guard newPersonCount > oldPersonCount else { return }
         let newRow = filteredPeople.count - 1
         let indexPath = IndexPath(row: newRow, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
@@ -87,12 +87,12 @@ class PeopleTableViewController: UITableViewController {
     }
 }
 
-// MARK: RecipeTableViewCellDelegate Conformance
+// MARK: PersonTableViewCellDelegate Conformance
 extension PeopleTableViewController: PersonTableViewCellDelegate {
     
     func toggleFavoriteButtonWasTapped(cell: PersonTableViewCell) {
-        guard let recipe = cell.person else { return }
-        personController.toggleFavorite(person: recipe)
+        guard let person = cell.person else { return }
+        personController.toggleFavorite(person: person)
         tableView.reloadData()
     }
 }
