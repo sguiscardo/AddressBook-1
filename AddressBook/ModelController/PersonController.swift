@@ -60,11 +60,6 @@ class PersonController {
         saveContactsToDisk()
     }
     
-    func toggleFavorite(person: Person) {
-        person.isFavorite.toggle()
-        saveContactsToDisk()
-    }
-    
     
     // MARK: - Persistance
     func saveContactsToDisk() {

@@ -71,34 +71,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="YAh-Vg-wmf">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="91"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vUp-nq-V26">
-                                    <rect key="frame" x="16" y="8" width="382" height="75"/>
+                                    <rect key="frame" x="16" y="8" width="382" height="45"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1hH-To-B4q">
-                                            <rect key="frame" x="0.0" y="0.0" width="382" height="36"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="45"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Lj-ug-VEp">
-                                            <rect key="frame" x="0.0" y="44" width="382" height="31"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites Only?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6N0-DN-Ypn">
-                                                    <rect key="frame" x="0.0" y="0.0" width="333" height="31"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6j7-zH-P9f">
-                                                    <rect key="frame" x="333" y="0.0" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="favoritesOnlySwitchToggled:" destination="tdF-fv-0ek" eventType="valueChanged" id="CuI-vr-CVL"/>
-                                                    </connections>
-                                                </switch>
-                                            </subviews>
-                                        </stackView>
                                     </subviews>
                                 </stackView>
                             </subviews>
@@ -111,43 +94,23 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonCell" rowHeight="83" id="kZa-2c-dJY" customClass="PersonTableViewCell" customModule="AddressBook" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="135.5" width="414" height="83"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonCell" textLabel="q23-wu-SZ1" rowHeight="83" style="IBUITableViewCellStyleDefault" id="kZa-2c-dJY" customClass="PersonTableViewCell" customModule="AddressBook" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="105.5" width="414" height="83"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kZa-2c-dJY" id="SUg-JS-KlC">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="83"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6sh-5H-Hnj">
-                                            <rect key="frame" x="28" y="19" width="358" height="45"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fca-pC-Asd">
-                                                    <rect key="frame" x="0.0" y="0.0" width="328" height="45"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="900" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSS-cI-uBS">
-                                                    <rect key="frame" x="336" y="0.0" width="22" height="45"/>
-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" image="star.fill" catalog="system"/>
-                                                    <connections>
-                                                        <action selector="toggleFavoriteButtonTapped:" destination="kZa-2c-dJY" eventType="touchUpInside" id="tZB-DD-E21"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                        </stackView>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q23-wu-SZ1">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="83"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="6sh-5H-Hnj" firstAttribute="top" secondItem="SUg-JS-KlC" secondAttribute="topMargin" constant="8" id="A0X-IV-HT8"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="6sh-5H-Hnj" secondAttribute="bottom" constant="8" id="c0H-zF-qv0"/>
-                                        <constraint firstItem="6sh-5H-Hnj" firstAttribute="leading" secondItem="SUg-JS-KlC" secondAttribute="leadingMargin" constant="8" id="fzJ-H0-VSL"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="6sh-5H-Hnj" secondAttribute="trailing" constant="8" id="lrq-VB-Qrw"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="favoriteButton" destination="qSS-cI-uBS" id="2v8-hu-IdQ"/>
-                                    <outlet property="personNameLabel" destination="fca-pC-Asd" id="JPf-7v-ark"/>
                                     <segue destination="RhT-1e-pN6" kind="show" identifier="toPersonDetail" id="tzv-x7-B8a"/>
                                 </connections>
                             </tableViewCell>
@@ -167,7 +130,6 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="favoritesOnlyToggle" destination="6j7-zH-P9f" id="zBL-Kt-N0Y"/>
                         <outlet property="groupNameTextField" destination="1hH-To-B4q" id="COq-XN-chX"/>
                     </connections>
                 </tableViewController>
@@ -216,22 +178,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Fxf-uI-ydI">
-                        <rightBarButtonItems>
-                            <barButtonItem image="star.fill" catalog="system" id="3K5-8U-96q">
-                                <connections>
-                                    <action selector="favoriteButtonTapped:" destination="RhT-1e-pN6" id="8yB-WW-Dyh"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="save" id="BCk-WY-Gn5">
-                                <connections>
-                                    <action selector="saveButtonTapped:" destination="RhT-1e-pN6" id="J55-6k-IiI"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="BCk-WY-Gn5">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="RhT-1e-pN6" id="J55-6k-IiI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addressTextField" destination="EsZ-rL-Ppu" id="Wf8-89-1ik"/>
-                        <outlet property="favoriteBarButtonItem" destination="3K5-8U-96q" id="6IY-1j-q2O"/>
                         <outlet property="nameTextField" destination="Svq-r2-xLA" id="qEU-tT-cge"/>
                     </connections>
                 </viewController>
@@ -260,7 +214,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
