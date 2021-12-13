@@ -18,6 +18,7 @@ class PeopleTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         groupNameTextField.text = group?.name
+        tableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
