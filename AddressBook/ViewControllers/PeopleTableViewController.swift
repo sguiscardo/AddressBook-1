@@ -73,13 +73,8 @@ class PeopleTableViewController: UITableViewController {
     // MARK: - Actions
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
         guard let group = group else { return }
-        let oldPersonCount = filteredPeople.count
         personController.createPerson(group: group)
-        let newPersonCount = filteredPeople.count
-        guard newPersonCount > oldPersonCount else { return }
-        let newRow = filteredPeople.count - 1
-        let indexPath = IndexPath(row: newRow, section: 0)
-        tableView.insertRows(at: [indexPath], with: .automatic)
+        tableView.reloadData()
     }
     
     @IBAction func favoritesOnlySwitchToggled(_ sender: UISwitch) {

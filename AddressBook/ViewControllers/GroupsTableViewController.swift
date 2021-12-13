@@ -50,9 +50,7 @@ class GroupsTableViewController: UITableViewController {
     // MARK: - IBActions
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
         personController.createContactGroup()
-        let newRow = personController.groups.count - 1
-        let indexPath = IndexPath(row: newRow, section: 0)
-        tableView.insertRows(at: [indexPath], with: .automatic)
+        tableView.reloadData()
     }
     
 }
