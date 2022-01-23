@@ -10,8 +10,6 @@ import UIKit
 class PeopleTableViewController: UITableViewController {
     
     @IBOutlet weak var groupNameTextField: UITextField!
-    
-    let personController = PersonController.shared
     var group: Group?
 
     // MARK: - Lifecycle Methods
@@ -24,8 +22,9 @@ class PeopleTableViewController: UITableViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         guard let group = group,
-            let newName = groupNameTextField.text else { return }
-        personController.update(group: group, name: newName)
+            let newName = groupNameTextField.text
+        else { return }
+        GroupController.shared.update(group: group, name: newName)
     }
 
     // MARK: - Table view data source
@@ -45,7 +44,7 @@ class PeopleTableViewController: UITableViewController {
         if editingStyle == .delete {
             guard let group = group else { return }
             let person = group.people[indexPath.row]
-            personController.delete(person: person, in: group)
+            PersonContoller.delete(person: person, in: group)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
@@ -54,7 +53,8 @@ class PeopleTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "toPersonDetail",
               let personDetailViewController = segue.destination as? PersonDetailViewController,
-              let selectedRow = tableView.indexPathForSelectedRow?.row else { return }
+              let selectedRow = tableView.indexPathForSelectedRow?.row
+        else { return }
         let person = group?.people[selectedRow]
         personDetailViewController.person = person
     }
@@ -62,7 +62,7 @@ class PeopleTableViewController: UITableViewController {
     // MARK: - Actions
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
         guard let group = group else { return }
-        personController.createPerson(group: group)
+        PersonContoller.createPerson(group: group)
         tableView.reloadData()
     }
 }

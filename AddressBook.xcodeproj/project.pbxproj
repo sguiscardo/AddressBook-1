@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EFE2A11279E19E60004A5F0 /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE2A10279E19E60004A5F0 /* PersonController.swift */; };
 		F7040FF22716520B00B913AC /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7040FF12716520B00B913AC /* GroupsTableViewController.swift */; };
 		F7040FF72716528200B913AC /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7040FF62716528200B913AC /* PersonDetailViewController.swift */; };
 		F7FB3DE527163FDB0091D1B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB3DE427163FDB0091D1B1 /* AppDelegate.swift */; };
@@ -16,11 +17,12 @@
 		F7FB3DF127163FDE0091D1B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7FB3DEF27163FDE0091D1B1 /* LaunchScreen.storyboard */; };
 		F7FB3DF9271643AA0091D1B1 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB3DF8271643AA0091D1B1 /* Group.swift */; };
 		F7FB3DFB271643B10091D1B1 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB3DFA271643B10091D1B1 /* Person.swift */; };
-		F7FB3DFE271649D20091D1B1 /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB3DFD271649D20091D1B1 /* PersonController.swift */; };
+		F7FB3DFE271649D20091D1B1 /* GroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB3DFD271649D20091D1B1 /* GroupController.swift */; };
 		F7FB3E0027164A4E0091D1B1 /* PeopleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB3DFF27164A4E0091D1B1 /* PeopleTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3EFE2A10279E19E60004A5F0 /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
 		F7040FF12716520B00B913AC /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		F7040FF62716528200B913AC /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 		F7FB3DE127163FDB0091D1B1 /* AddressBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,7 +34,7 @@
 		F7FB3DF227163FDE0091D1B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7FB3DF8271643AA0091D1B1 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		F7FB3DFA271643B10091D1B1 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		F7FB3DFD271649D20091D1B1 /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
+		F7FB3DFD271649D20091D1B1 /* GroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupController.swift; sourceTree = "<group>"; };
 		F7FB3DFF27164A4E0091D1B1 /* PeopleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,7 +52,8 @@
 		F7040FF32716522700B913AC /* ModelController */ = {
 			isa = PBXGroup;
 			children = (
-				F7FB3DFD271649D20091D1B1 /* PersonController.swift */,
+				F7FB3DFD271649D20091D1B1 /* GroupController.swift */,
+				3EFE2A10279E19E60004A5F0 /* PersonController.swift */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -186,13 +189,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7040FF22716520B00B913AC /* GroupsTableViewController.swift in Sources */,
+				3EFE2A11279E19E60004A5F0 /* PersonController.swift in Sources */,
 				F7FB3DF9271643AA0091D1B1 /* Group.swift in Sources */,
 				F7040FF72716528200B913AC /* PersonDetailViewController.swift in Sources */,
 				F7FB3DE527163FDB0091D1B1 /* AppDelegate.swift in Sources */,
 				F7FB3DE727163FDB0091D1B1 /* SceneDelegate.swift in Sources */,
 				F7FB3E0027164A4E0091D1B1 /* PeopleTableViewController.swift in Sources */,
 				F7FB3DFB271643B10091D1B1 /* Person.swift in Sources */,
-				F7FB3DFE271649D20091D1B1 /* PersonController.swift in Sources */,
+				F7FB3DFE271649D20091D1B1 /* GroupController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +345,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 77U2457882;
+				DEVELOPMENT_TEAM = UCL5625TDG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AddressBook/Resourses/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -369,7 +373,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 77U2457882;
+				DEVELOPMENT_TEAM = UCL5625TDG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AddressBook/Resourses/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -9,7 +9,7 @@ import UIKit
 
 class GroupsTableViewController: UITableViewController {
     
-    let personController = PersonController.shared
+    let personController = GroupController.shared
     
     // MARK: - Lifecycle Methods
     override func viewWillAppear(_ animated: Bool) {

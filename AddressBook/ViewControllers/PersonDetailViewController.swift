@@ -14,7 +14,6 @@ class PersonDetailViewController: UIViewController {
     @IBOutlet weak var addressTextField: UITextField!
     
     // MARK: - Properties
-    let personController = PersonController.shared
     var person: Person?
     
     // MARK: - Methods
@@ -34,7 +33,7 @@ class PersonDetailViewController: UIViewController {
         guard let person = person,
               let name = nameTextField.text,
               let address = addressTextField.text else { return }
-        personController.update(person: person, name: name, address: address)
+        PersonContoller.update(person: person, name: name, address: address)
         self.navigationController?.popViewController(animated: true)
     }
 }
