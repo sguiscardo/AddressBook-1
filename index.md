@@ -26,10 +26,12 @@ This project will use quite a bit of the skills you’ve picked up in Unit2. We 
 
  It's gonna be great! Let's get started…
 Initial screen:
-[image:D1B23C3F-9191-4D64-95DE-5F926E325563-13746-00018472E8862F8E/AddressBookGroupsTBVC.png]
+
+![Inital Screen](/AddressBook/assests/AddressBookGroupsTBVC.png)
 
 Second Screen. Take note of what the segue is hi-lighting…
-[image:0AE4E310-8CC2-41C7-8308-B25A4C06E6DC-13746-0001849D4520B76E/ABSegue&PeopleTBVC.png]
+
+![Second Screen](/AddressBook/assests/ABSegue&PeopleTBVC.png)
 
 Hint for how the blue view is above the `TableView`
 * Drag a `UIView` element and hover it UNDER the navigation item - yet ABOVE the tableview. You should see a blue line appear.
@@ -42,7 +44,8 @@ Hint for how the blue view is above the `TableView`
 * Lock this item in place with `8` point constraints for the `Top`, `Leading`, `Trailing`, and `Bottom`
 
 Final Screen. Take note of what the segue is hi-lighting…
-[image:133ACE6A-1D58-4EFF-8BA4-F6A72575356F-13746-000184B666279FA4/FinalScreenAB.png]
+
+![Final Screen](/AddressBook/assests/FinalScreenAB.png)
 
 
 Really great work on building that UI from the images! This is similar to what you will experience on-role as an iOS Developer. Now, let’s get to building the `Models` for this project. BUT! Before we do what should you do? 
