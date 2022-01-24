@@ -126,7 +126,7 @@ Now write the necessary code to complete the `update` and `delete` functions. Th
 * To update the `Person` I need…
 * To delete the `person` I need…
 
-Within the body of the `update` and the `update` functions write a comment that reminds you to save when you can.
+Within the body of the `create`, `update` and the `delete` functions write a comment that reminds you to  call your `save` method when you can.
 `//TODO: - Save to persistent store`
 
 Nice! Make a commit with your now complete(ish) `PersonController`
