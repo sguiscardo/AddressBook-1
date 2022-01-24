@@ -27,11 +27,11 @@ This project will use quite a bit of the skills you’ve picked up in Unit2. We 
  It's gonna be great! Let's get started…
 Initial screen:
 
-![Inital Screen](/AddressBook/assests/AddressBookGroupsTBVC.png)
+![Inital Screen](/AddressBookGroupsTBVC.png)
 
 Second Screen. Take note of what the segue is hi-lighting…
 
-![Second Screen](/AddressBook/assests/ABSegue&PeopleTBVC.png)
+![Second Screen](/ABSegue&PeopleTBVC.png)
 
 Hint for how the blue view is above the `TableView`
 * Drag a `UIView` element and hover it UNDER the navigation item - yet ABOVE the tableview. You should see a blue line appear.
@@ -45,7 +45,7 @@ Hint for how the blue view is above the `TableView`
 
 Final Screen. Take note of what the segue is hi-lighting…
 
-![Final Screen](/AddressBook/assests/FinalScreenAB.png)
+![Final Screen](/FinalScreenAB.png)
 
 
 Really great work on building that UI from the images! This is similar to what you will experience on-role as an iOS Developer. Now, let’s get to building the `Models` for this project. BUT! Before we do what should you do? 
