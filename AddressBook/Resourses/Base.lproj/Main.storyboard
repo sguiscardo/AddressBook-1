@@ -60,7 +60,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v8y-Mc-GQv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="178" y="-159"/>
+            <point key="canvasLocation" x="-30" y="-159"/>
         </scene>
         <!--People Table View Controller-->
         <scene sceneID="M6G-Dj-AbP">
@@ -85,7 +85,7 @@
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" systemColor="systemIndigoColor"/>
                             <constraints>
                                 <constraint firstItem="vUp-nq-V26" firstAttribute="top" secondItem="YAh-Vg-wmf" secondAttribute="top" constant="8" id="VbZ-bh-tjN"/>
                                 <constraint firstAttribute="bottom" secondItem="vUp-nq-V26" secondAttribute="bottom" constant="8" id="eWv-bV-SSx"/>
@@ -135,7 +135,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnv-Lt-SHx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1179.7101449275362" y="-159.375"/>
+            <point key="canvasLocation" x="709" y="-159"/>
         </scene>
         <!--Person Detail View Controller-->
         <scene sceneID="Mzy-cw-9fH">
@@ -191,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r8Q-Y8-Yf0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2303" y="-159"/>
+            <point key="canvasLocation" x="1458" y="-159"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nqf-Ot-Qls">
@@ -216,6 +216,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
