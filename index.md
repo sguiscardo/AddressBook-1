@@ -248,8 +248,8 @@ Within the body of the `loadContactFromDisk` function, we need to do the opposit
             // 2. Load the data from the address
             let data = try Data(contentsOf: url)
             // 3. Decode that data into our Swift model object
-            let categories = try JSONDecoder().decode([Group].self, from: data)
-            self.groups = categories
+            let groups = try JSONDecoder().decode([Group].self, from: data)
+            self.groups = groups
         } catch let error {
             print(error)
         }
