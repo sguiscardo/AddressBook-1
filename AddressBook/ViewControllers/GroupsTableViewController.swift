@@ -9,7 +9,7 @@ import UIKit
 
 class GroupsTableViewController: UITableViewController {
     
-    let personController = PersonController.shared
+    let groupController = GroupController.shared
     
     // MARK: - Lifecycle Methods
     override func viewWillAppear(_ animated: Bool) {
@@ -19,12 +19,12 @@ class GroupsTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return personController.groups.count
+        return groupController.groups.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddressBookGroupCell", for: indexPath)
-        let group = personController.groups[indexPath.row]
+        let group = groupController.groups[indexPath.row]
         cell.textLabel?.text = group.name
         cell.detailTextLabel?.text = "\(group.people.count) People"
         return cell
@@ -32,8 +32,8 @@ class GroupsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let group = personController.groups[indexPath.row]
-            personController.delete(group: group)
+            let group = groupController.groups[indexPath.row]
+            groupController.delete(group: group)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
@@ -43,13 +43,13 @@ class GroupsTableViewController: UITableViewController {
         guard segue.identifier == "toPeopleTableViewController",
               let peopleTableViewController = segue.destination as? PeopleTableViewController,
               let selectedRow = tableView.indexPathForSelectedRow?.row else { return }
-        let group = personController.groups[selectedRow]
+        let group = groupController.groups[selectedRow]
         peopleTableViewController.group = group
     }
     
     // MARK: - IBActions
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
-        personController.createContactGroup()
+        groupController.createContactGroup()
         tableView.reloadData()
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		418BDBB1279F70D4006982D1 /* GroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418BDBB0279F70D4006982D1 /* GroupController.swift */; };
 		F7040FF22716520B00B913AC /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7040FF12716520B00B913AC /* GroupsTableViewController.swift */; };
 		F7040FF72716528200B913AC /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7040FF62716528200B913AC /* PersonDetailViewController.swift */; };
 		F73098DC271893A7009B4E11 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73098DB271893A7009B4E11 /* PersonTableViewCell.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		418BDBB0279F70D4006982D1 /* GroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupController.swift; sourceTree = "<group>"; };
 		F7040FF12716520B00B913AC /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		F7040FF62716528200B913AC /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 		F73098DB271893A7009B4E11 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				F7FB3DFD271649D20091D1B1 /* PersonController.swift */,
+				418BDBB0279F70D4006982D1 /* GroupController.swift */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				F7040FF22716520B00B913AC /* GroupsTableViewController.swift in Sources */,
 				F7FB3DF9271643AA0091D1B1 /* Group.swift in Sources */,
 				F7040FF72716528200B913AC /* PersonDetailViewController.swift in Sources */,
+				418BDBB1279F70D4006982D1 /* GroupController.swift in Sources */,
 				F73098DC271893A7009B4E11 /* PersonTableViewCell.swift in Sources */,
 				F7FB3DE527163FDB0091D1B1 /* AppDelegate.swift in Sources */,
 				F7FB3DE727163FDB0091D1B1 /* SceneDelegate.swift in Sources */,

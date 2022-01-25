@@ -12,7 +12,7 @@ class PeopleTableViewController: UITableViewController {
     @IBOutlet weak var groupNameTextField: UITextField!
     @IBOutlet weak var favoritesOnlyToggle: UISwitch!
     
-    let personController = PersonController.shared
+    let groupController = GroupController.shared
     var group: Group?
     
     private var filteredPeople: [Person] {
@@ -35,7 +35,7 @@ class PeopleTableViewController: UITableViewController {
         super.viewWillDisappear(animated)
         guard let group = group,
             let newName = groupNameTextField.text else { return }
-        personController.update(group: group, name: newName)
+        groupController.update(group: group, name: newName)
     }
 
     // MARK: - Table view data source
@@ -56,7 +56,7 @@ class PeopleTableViewController: UITableViewController {
         if editingStyle == .delete {
             guard let group = group else { return }
             let person = filteredPeople[indexPath.row]
-            personController.delete(person: person, in: group)
+            PersonController.delete(person: person, in: group)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
@@ -73,7 +73,7 @@ class PeopleTableViewController: UITableViewController {
     // MARK: - Actions
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
         guard let group = group else { return }
-        personController.createPerson(group: group)
+        PersonController.createPerson(group: group)
         tableView.reloadData()
     }
     
@@ -87,7 +87,7 @@ extension PeopleTableViewController: PersonTableViewCellDelegate {
     
     func toggleFavoriteButtonWasTapped(cell: PersonTableViewCell) {
         guard let person = cell.person else { return }
-        personController.toggleFavorite(person: person)
+        PersonController.toggleFavorite(person: person)
         tableView.reloadData()
     }
 }

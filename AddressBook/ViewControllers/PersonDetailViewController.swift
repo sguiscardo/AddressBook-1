@@ -15,7 +15,7 @@ class PersonDetailViewController: UIViewController {
     @IBOutlet weak var favoriteBarButtonItem: UIBarButtonItem!
     
     // MARK: - Properties
-    let personController = PersonController.shared
+//    let personController = PersonController.shared
     var person: Person?
     
     // MARK: - Methods
@@ -43,13 +43,13 @@ class PersonDetailViewController: UIViewController {
         guard let person = person,
               let name = nameTextField.text,
               let address = addressTextField.text else { return }
-        personController.update(person: person, name: name, address: address)
+        PersonController.update(person: person, name: name, address: address)
         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func favoriteButtonTapped(_ sender: Any) {
         guard let person = person else { return }
-        personController.toggleFavorite(person: person)
+        PersonController.toggleFavorite(person: person)
         updateFavoriteButton()
     }
 }
