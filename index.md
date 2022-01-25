@@ -174,7 +174,7 @@ Okay! Well done! At this time you should have your `properties`, `singleton`, an
 
 #### Save, Load, and the URL it all goes to
 
-Before we start filling out the `save` and `load` functions there is one final property we need. For readability, we recommend creating this under the `loadContactsToDisk`function.
+Before we start filling out the `save` and `load` functions there is one final property we need. For readability, we recommend creating this under the `loadContactsFromDisk`function.
 
 Define a `private` variable with the name `fileURL` that is of the type `URL` optional. This will be a `computed property`, which means the value will be the result of some computation. You define a computed property by opening a scope following the type.
 ``` swift
@@ -189,7 +189,7 @@ Within the body of the `fileURL` computed property, we need to accomplish a few 
 
 First - We need to locate a file where we can save the data for this application. Because the data will be saved onto the phone the file path will be a URL. The best place to save basic data is directly in the `Documents` directory on the phone.
 
-Secondly - we need to assign the proper `Path Comment` so we can locate this file again. 
+Secondly - we need to assign the proper `Path Component` so we can locate this file again. 
 
 Finally - when all is said and done we can return a `url` that we can use over and over.
 
