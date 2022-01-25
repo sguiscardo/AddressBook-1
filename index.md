@@ -228,6 +228,15 @@ func saveContactsToDisk() {
         }
     }
 ```
+Currently you should have an error on the line where you encode the data. Read the error and solve it accourdingly.
+
+<details>
+<summary>How do I solve the error?</summary>
+<br>
+Have the `Group` confrom to the `Codable` protocol
+<br>	
+Have the `Person` conform to the `Codable` protocol
+</details>
 
 Nice work! Let’s finish the load function and party.
 
