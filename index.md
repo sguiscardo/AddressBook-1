@@ -381,3 +381,259 @@ Build. Run. Commit. Take a well-deserved break.
 * Update the design of this app to allow the user to add more detailed information about the `contacts` they are saving.
 * Write comments for every line of code within your project explaining what It does
 
+---
+
+# Address Book: Part 2
+
+In this project, you will continue the work you started on Part 1 of Address Book. We will use your new knowledge of Swift protocols to build an app that allows you to favorite a contact, and sort your contacts accordingly.
+
+Students who complete this project independently or as a pairing will showcase their understanding of the following principles:
+
+* Basic Storyboard constraints
+* UITableviews
+* Creating Custom `class` objects
+* Constants, Variables, and Basic Data Types
+* Collections
+* Functions
+* Control Flow
+* IBActions && IBOutlets
+* Multiple Model Objects
+* Multiple Segues
+* Local Persistence
+
+---
+
+##  Updated Design
+Building off where you ended on Part 1 we be adding a few new UI/UX features to the projects. Our design team have requested that we allow the users to `favorite` a contact along with `sort` their contacts to only show `favorites`. This should be on a `Group` by `Group` basis. 
+
+Take a look at the screen shots they have provided to get an idea of what view elements we will need to add to make this work. The changes in the design will dictate the change we need to make to our code.
+
+
+[image:0D2AAC1F-1DE1-481A-965A-44DE2754CCEF-13746-0001FCA6BA8B8F56/AB2Favorite.png]
+
+
+Take a moment and reflect on what the new view elements are.  On the `PeopleListTableViewController` it looks like we have a new `StackView` with a `label` and a `switch`. Seems to be a custom cell because the label is centered and there is a star `button`.
+
+On the `PersonDetailViewController` it looks like we have a new `Bar Button Item` which is a star. As it turns out, that `star` image is given to us for free from Xcode. It is a `system icon` so we will not need to add anything to our `assets` folder.
+
+Challenge yourself to build the updated UI without the instructions below.
+
+---
+
+## Updating the List View UI
+To update the `PeopleListTableViewController` UI we will need to perform the following actions:
+
+* Drag a new `Label` onto the canvas
+* Drag a new `Switch` onto the canvas
+	* Via the Attributes Inspector set the initial `state` to `Off`
+* Embed both into a `Horizontal` stack view
+	* Fill
+	* Fill
+	* 0 Spacing
+* Select both this new `StackView` and the `Group Name Text Field`
+* Embed these into a `Vertical` stack view
+* Lock all the elements in with the following constraints:
+	* set the `Leading` and `Trailing` to 16 from the `SuperView`
+	* set the `Top` and `Bottom` to 8 from the `SuperView`
+
+Great work! Now we need to create the custom cell.
+
+*  Within a `stackView` add a `label` and a `button`
+	* Fill, Fill, 8 Spacing, Horizontal
+* Lock this `stackView` in place with the following contraints
+* `Top`, `Bottom`, `Leading`, and `Trailing` to 8 from the `Superview`
+
+Not that the Custom Cell has been designed we recommend  creating the `ViewController` class that will manage the custom cell along with setting the `subclass` accordingly. 
+
+Be careful to subclass the `cell` and NOT the `Content View`. If run and build your app and the constraints are not working.. check that you did not `subclass` the `Content View`.
+
+
+---
+
+## Updating the Student Detail UI
+This one will be easy-peasy. Add the `Bar Button Item` on the `right` side of the `save` button. Via the `Attributes Inspector` set the `Image` to `star.fill`.
+
+Victory.
+
+Build. Run. Commit. 
+
+---
+
+## Everything else
+
+### Person Model
+
+Create a new property to track if the person is a favorite or not. Update all files and initializers accordingly
+
+###  Person Controller
+
+We need a function that will allow us to update the `isFavorite` property of a `person` object. Write that now. 
+*  This needs to be static
+* ¯\_(ツ)_/¯ maybe you should save too?
+
+### Person Detail VC
+
+Now that we have updated the UI to allow for favoriting along with updating the controller && Model accordingly we can now wire up the Detail VC . 
+
+* Create a helper function named `updateFavoriteButton` 
+	* guard that the `person` object is not `nil`
+	*  Create a constant named `favoriteImageName` that is assigned the value of a `ternary operator` that will use the string `”star.fill”` or `”star”` depending on if the person `isfavorited` or not.
+	* Create a constant that is the value of a `UIImage` initialized with the value of `favoriteImageName`
+	* .setImage for the button using the constant you just declared
+
+Within the body of the `IBAction` for the `favoriteButton`
+*  guard that the `person` object is not `nil`
+* Call the `toggleFavorite` function from the `PersonController`
+* Call the `updateFavoriteButton` function 
+
+In the `updateViews` function be sure to call your `updateFavoriteButton` helper function.
+
+Build, run, and commit.
+
+### Custom Cell
+
+Okay, so now all we need to do is write the code for our custom cell to update its views. We also need a way to have the cell inform the tableview that it should handle the action of the user pressing the `favorite` button. Lastly, we need to create a way for our contacts to be `filtrable`. 
+
+Let’s start with the logic for the `Custom Cell` and the `Protocol && Delegate` it will need.
+
+To have the custom cell update its views we need to:
+* Have `IBOutlets` for the view elements
+* Optional Person
+* Helper function
+	* Guard against the `person`  being nil
+	* Set the `text` of the `label` to the value of the `name` property of the `person` you just unwrapped
+	* Create a constant named `favoriteImageName` that is assigned the value of a `ternary operator` that will use the string `”star.fill”` or `”star”` depending on if the person `isfavorited` or not.
+	* Create a constant that is the value of a `UIImage` initialized with the value of `favoriteImageName`
+	* .setImage for the button using the constant you just declared
+
+We are going to use this `updateViews()` function in a new way. We are going to create what is called a `Property Observer` . A Property Observer is something will only run if the an event is triggered that changes the value of a property. 
+
+In this case we want to call our `updateViews()` method when the optional proper `person`s value was set.
+
+``` swift
+	var person: Person? {
+        didSet {
+            updateViews()
+        }
+    }
+```
+
+Cool, yeah?
+
+Build. Run. Commit. Take a well-deserved  15 min break.
+
+---
+
+###  Protocol and the Delegate that will perform the action
+
+With our focus of separating the concerns of our files. Our goal is to have a way for the `cell` to manage its own updating. However, the `cell` will not know what `person` object to display or update without the `TableView` providing that information. So what we need is a set of instructions (Protocol) that the `TableView` (Delegate) can follow at a given time. 
+
+These instructions will provide all the necessary information for the `cell` to update accordingly.
+
+We start this process by defining the `protocol`. Convention dictates that the `protocol` should be declared above the `class`
+
+Declare a `protocol` named `PersonTableViewCellDelegate`
+	* Yes, its convention for the `protocol` name to have the word Delegate.
+	* Using a `:` after the declaration allow this `protocol` to interact with `AnyObject`
+	* Within the body of the `protocol` ; you *ONLY* define the `function` the `delegate` will perform. You do not add the body, or any additional information on *HOW* the delegate will perform the task.
+		* Declare a function named `toggleFavoriteButtonWasTapped`
+		* This function should have a parameter of type `PersonTableViewCell`. We only want to update cells with that type.
+
+<details>
+<summary>How do I write this?</summary>
+<br>
+``` swift
+	protocol PersonTableViewCellDelegate: AnyObject {
+    func toggleFavoriteButtonWasTapped(cell:PersonTableViewCell)
+}
+```
+<br>	
+</details>
+
+To complete the `cell`s set up we only need to declare a property named `delegate`  of type `PersonTableViewCellDelegate` optional. This property must be set to `weak`
+
+``` swift
+weak var delegate: PersonTableViewCellDelegate?
+``` 
+
+In the body of the `IBAction` for the button ->  call the `delegate`, and it’s `delegate method`. Because we are on the file `PersonTableViewCell` we can pass `self` into the parameter.
+
+``` swift
+@IBAction func toggleFavoriteButtonTapped(_ sender: UIButton) 		{
+        delegate?.toggleFavoriteButtonWasTapped(cell: self)
+    	}
+```
+
+All the work we just completed lays the ground work for our Protocol and Delegate to work together.. We created the protocol and defined the `task` we need the delegate to perform.  We created a property named `delegate` that we will assign later. What ever class we mark to be the delegate will need to define `how` it will accomplish the `task` we defined in the `protocol` body.
+
+We completed the set up with calling our `delegate method` when the user taps on the `favoriteButton`. That will be the trigger that starts the whole process.
+
+Build. Run. Dance. Commit. Slay.
+
+### Assign the God Damn Delegate
+
+*( Everyone forgets this step… )*
+
+Now that we have created our `protocol` and defined a `delegate` property we need to *hire* or assign a `class` to be the `delegate` and perform all the actions we need. 
+
+In this case we will be assigning the `PeopleListTableViewController` to be the `delegate` of the `PersonTableViewCellDelegate` protocol.
+
+Navigate to the `PeopleListTableViewController`. As is convention, at the bottom of the file extend this `class` to adopt the `PersonTableViewCellDelegate` protocol.
+
+Use the error to quickly add the `protocol stubs`
+
+Now we can finally define *how* the `delegate` is to perform the action we need. 
+* We need to guard that the `person` object from the cell is not `nil`
+* Call the controller to update the `isFavorite` property
+* Reload the `tableView`
+
+Be sure to navigate to the `tableView(_ tableView: UITableView, cellForRowAt` function and assign the `delegate` property from the cell to `self`. Self in this case is the  `PeopleListTableViewController`
+
+Boom! Thats it! You nailed it. The protocol and its delegate are all set up meow.
+
+Build. Run. Commit. Take a break
+
+---
+
+## Filtering the contacts
+Awesome work so far! All we have left to do is allow our contacts to be filtered. This will take place on the  `PeopleListTableViewController`
+
+If you have not already, create the `IBOutlet` for the `switch`. Be sure to also create the `IBAction`. The action performed on a `switch` is typically called `toggle`.
+
+First things first we need to create a place holder for our filtered contacts.
+*  create a `private` variable named `filteredPeople` that is of type an array of `People` objects. 
+* This will be a `computed property` whose value will be the result of a a condition. 
+* We need to check if the `switch` is toggled or not
+	* If it is
+		* Return the `people` array from the `group`  using dot notation access the function `filtered` and use `$0. isFavorite` as your check. 
+		* Handle the optional by `nil-coalescing` an empty array
+	* If it is not
+		* Return the `people` array from the `group` 
+		* Handle the optional by `nil-coalescing` an empty array
+
+``` swift
+private var filteredPeople: [Person] {
+        if favoritesOnlyToggle.isOn {
+            return group?.people.filter { $0.isFavorite } ?? []
+        } else {
+            return group?.people ?? []
+        }
+    }
+```
+
+Update the `Data Source` methods, the `delete` and the `segue` to use the property `filteredPeople`
+
+Lastly, in the `IBAction` for the `switch`
+*  Reload the `tableView`
+
+
+Woah! Nice! Build, Run, and test your project! Everything should be working as intended. Fix any bugs that may be present. Well done!
+
+Commit. Submit. Dance.
+
+---
+
+
+# Stretch goals
+* Write comments for every line of code within your project explaining what It does
+
