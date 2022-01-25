@@ -409,7 +409,7 @@ Building off where you ended on Part 1 we be adding a few new UI/UX features to 
 Take a look at the screen shots they have provided to get an idea of what view elements we will need to add to make this work. The changes in the design will dictate the change we need to make to our code.
 
 
-[image:0D2AAC1F-1DE1-481A-965A-44DE2754CCEF-13746-0001FCA6BA8B8F56/AB2Favorite.png]
+![Updated Screen](/AB2Favorite.png)
 
 
 Take a moment and reflect on what the new view elements are.  On the `PeopleListTableViewController` it looks like we have a new `StackView` with a `label` and a `switch`. Seems to be a custom cell because the label is centered and there is a star `button`.
@@ -490,6 +490,8 @@ In the `updateViews` function be sure to call your `updateFavoriteButton` helper
 
 Build, run, and commit.
 
+---
+
 ### Custom Cell
 
 Okay, so now all we need to do is write the code for our custom cell to update its views. We also need a way to have the cell inform the tableview that it should handle the action of the user pressing the `favorite` button. Lastly, we need to create a way for our contacts to be `filtrable`. 
@@ -542,11 +544,9 @@ Declare a `protocol` named `PersonTableViewCellDelegate`
 <details>
 <summary>How do I write this?</summary>
 <br>
-``` swift
-	protocol PersonTableViewCellDelegate: AnyObject {
+protocol PersonTableViewCellDelegate: AnyObject {
     func toggleFavoriteButtonWasTapped(cell:PersonTableViewCell)
 }
-```
 <br>	
 </details>
 
@@ -563,6 +563,8 @@ In the body of the `IBAction` for the button ->  call the `delegate`, and it’s
         delegate?.toggleFavoriteButtonWasTapped(cell: self)
     	}
 ```
+
+---
 
 All the work we just completed lays the ground work for our Protocol and Delegate to work together.. We created the protocol and defined the `task` we need the delegate to perform.  We created a property named `delegate` that we will assign later. What ever class we mark to be the delegate will need to define `how` it will accomplish the `task` we defined in the `protocol` body.
 
