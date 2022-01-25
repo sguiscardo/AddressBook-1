@@ -17,6 +17,7 @@ Students who complete this project independently or as a pairing will showcase t
 * Multiple Model Objects
 * Multiple Segues
 * Local Persistence
+
 ---
 
 ## Design
@@ -24,7 +25,7 @@ Our  Address book app will display `Group` objects in a `UITableView`. Once you 
 
 This project will use quite a bit of the skills you’ve picked up in Unit2. We feel confident that you’ll be able to build the UI for this app just by seeing how the design looks and feels.  We recommend building this project one `scene` at a time and wiring up the `segue`  at the end.
 
- It's gonna be great! Let's get started…
+It's gonna be great! Let's get started…
 Initial screen:
 
 ![Inital Screen](/AddressBookGroupsTBVC.png)
@@ -69,6 +70,7 @@ Create the member-wise initializer
 You may be wondering what a UUID is. A UUID is a universally unique value that can be used to identify types, interfaces, and other items…. Basically, a UUID is a random set of characters. We will use this to differentiate our different  `people` objects.
 
 We will be allowing our users to delete `Person` Objects. Adopt, and conform to the `Equatable` protocol.
+
 ---
 
 ## Model 2 - Create a `Group` model with..
@@ -113,6 +115,8 @@ Within the body of this method we need to:
  * Initialize a `Person` object using the parameters. 
  * Append this new `person` object to the `people` array on the `group`
  * Comment here to remind you to save the data when the time comes
+
+
 ```swift
  static func createPerson(name: String = "New Contact",
                       address: String = "",
@@ -130,6 +134,7 @@ Within the body of the `create`, `update` and the `delete` functions write a com
 `//TODO: - Save to persistent store`
 
 Nice! Make a commit with your now complete(ish) `PersonController`
+
 ---
 
 ### Group Controller
@@ -164,9 +169,11 @@ Be sure to call `saveContactsToDisk`
 Now, complete the `delete` and the ` update` functions. We feel it would be a good idea to `save` the data every time something is updated or deleted…
 
 Okay! Well done! At this time you should have your `properties`, `singleton`, and `CRUD` functions completed. The `save` and `load` functions should just be method signatures at this time.
+
 ---
 
 #### Save, Load, and the URL it all goes to
+
 Before we start filling out the `save` and `load` functions there is one final property we need. For readability, we recommend creating this under the `loadContactsToDisk`function.
 
 Define a `private` variable with the name `fileURL` that is of the type `URL` optional. This will be a `computed property`, which means the value will be the result of some computation. You define a computed property by opening a scope following the type.
@@ -177,6 +184,7 @@ private var fileURL: URL? {
 ```
 
 ##### Url
+
 Within the body of the `fileURL` computed property, we need to accomplish a few goals….
 
 First - We need to locate a file where we can save the data for this application. Because the data will be saved onto the phone the file path will be a URL. The best place to save basic data is directly in the `Documents` directory on the phone.
@@ -247,6 +255,7 @@ Within the body of the `loadContactFromDisk` function, we need to do the opposit
 ```
 
 This rounds out your controller! Great work. Study and reflect on the code for the last three functions we wrote. Take a break and commit all your hard work to your remote repo.
+
 ---
 
 ## Wire Up the Views
@@ -284,6 +293,7 @@ The final step of this VC is to complete the `IBAction` for the `Add` button. Th
 	* Reload the tableView
 
 Build. Run. Commit. Party
+
 ---
 
 ##### People TableView Controller
@@ -330,6 +340,7 @@ The final step of this VC is to complete the `IBAction` for the `Add` button. Th
 	* Reload the tableView
 
 Build. Run. Commit. Dance
+
 ---
 
 ##### Person Detail View Controller
