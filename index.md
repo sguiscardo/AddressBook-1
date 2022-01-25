@@ -241,17 +241,19 @@ Within the body of the `loadContactFromDisk` function, we need to do the opposit
 * Party
 
 ``` swift
- // 1. Get the address your data is saved at
-    guard let url = fileURL else { return }
-       do {
-          // 2. Load the data from the address
-          let data = try Data(contentsOf: url)
-           // 3. Decode that data into our Swift model object
+ func loadContactsFromDisk() {
+        // 1. Get the address your data is saved at
+        guard let url = fileURL else { return }
+        do {
+            // 2. Load the data from the address
+            let data = try Data(contentsOf: url)
+            // 3. Decode that data into our Swift model object
             let categories = try JSONDecoder().decode([Group].self, from: data)
             self.groups = categories
         } catch let error {
             print(error)
         }
+    }
 ```
 
 This rounds out your controller! Great work. Study and reflect on the code for the last three functions we wrote. Take a break and commit all your hard work to your remote repo.
