@@ -7,24 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3EFE2A11279E19E60004A5F0 /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE2A10279E19E60004A5F0 /* PersonController.swift */; };
-		F7040FF22716520B00B913AC /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7040FF12716520B00B913AC /* GroupsTableViewController.swift */; };
-		F7040FF72716528200B913AC /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7040FF62716528200B913AC /* PersonDetailViewController.swift */; };
 		F7FB3DE527163FDB0091D1B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB3DE427163FDB0091D1B1 /* AppDelegate.swift */; };
 		F7FB3DE727163FDB0091D1B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB3DE627163FDB0091D1B1 /* SceneDelegate.swift */; };
 		F7FB3DEC27163FDB0091D1B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7FB3DEA27163FDB0091D1B1 /* Main.storyboard */; };
 		F7FB3DEE27163FDE0091D1B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7FB3DED27163FDE0091D1B1 /* Assets.xcassets */; };
 		F7FB3DF127163FDE0091D1B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7FB3DEF27163FDE0091D1B1 /* LaunchScreen.storyboard */; };
-		F7FB3DF9271643AA0091D1B1 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB3DF8271643AA0091D1B1 /* Group.swift */; };
-		F7FB3DFB271643B10091D1B1 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB3DFA271643B10091D1B1 /* Person.swift */; };
-		F7FB3DFE271649D20091D1B1 /* GroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB3DFD271649D20091D1B1 /* GroupController.swift */; };
-		F7FB3E0027164A4E0091D1B1 /* PeopleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB3DFF27164A4E0091D1B1 /* PeopleTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3EFE2A10279E19E60004A5F0 /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
-		F7040FF12716520B00B913AC /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
-		F7040FF62716528200B913AC /* PersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 		F7FB3DE127163FDB0091D1B1 /* AddressBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7FB3DE427163FDB0091D1B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7FB3DE627163FDB0091D1B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,10 +22,6 @@
 		F7FB3DED27163FDE0091D1B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7FB3DF027163FDE0091D1B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7FB3DF227163FDE0091D1B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F7FB3DF8271643AA0091D1B1 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
-		F7FB3DFA271643B10091D1B1 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		F7FB3DFD271649D20091D1B1 /* GroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupController.swift; sourceTree = "<group>"; };
-		F7FB3DFF27164A4E0091D1B1 /* PeopleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,23 +35,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F7040FF32716522700B913AC /* ModelController */ = {
+		4109F6CF2833DDC500FD585D /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				F7FB3DFD271649D20091D1B1 /* GroupController.swift */,
-				3EFE2A10279E19E60004A5F0 /* PersonController.swift */,
+				F7FB3DEA27163FDB0091D1B1 /* Main.storyboard */,
+				F7FB3DEF27163FDE0091D1B1 /* LaunchScreen.storyboard */,
 			);
-			path = ModelController;
-			sourceTree = "<group>";
-		};
-		F7040FF42716524300B913AC /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				F7040FF12716520B00B913AC /* GroupsTableViewController.swift */,
-				F7FB3DFF27164A4E0091D1B1 /* PeopleTableViewController.swift */,
-				F7040FF62716528200B913AC /* PersonDetailViewController.swift */,
-			);
-			path = ViewControllers;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		F7040FF52716526500B913AC /* Resourses */ = {
@@ -73,9 +49,7 @@
 			children = (
 				F7FB3DE427163FDB0091D1B1 /* AppDelegate.swift */,
 				F7FB3DE627163FDB0091D1B1 /* SceneDelegate.swift */,
-				F7FB3DEA27163FDB0091D1B1 /* Main.storyboard */,
 				F7FB3DED27163FDE0091D1B1 /* Assets.xcassets */,
-				F7FB3DEF27163FDE0091D1B1 /* LaunchScreen.storyboard */,
 				F7FB3DF227163FDE0091D1B1 /* Info.plist */,
 			);
 			path = Resourses;
@@ -100,21 +74,10 @@
 		F7FB3DE327163FDB0091D1B1 /* AddressBook */ = {
 			isa = PBXGroup;
 			children = (
+				4109F6CF2833DDC500FD585D /* Storyboards */,
 				F7040FF52716526500B913AC /* Resourses */,
-				F7FB3DFC271643B70091D1B1 /* Models */,
-				F7040FF32716522700B913AC /* ModelController */,
-				F7040FF42716524300B913AC /* ViewControllers */,
 			);
 			path = AddressBook;
-			sourceTree = "<group>";
-		};
-		F7FB3DFC271643B70091D1B1 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				F7FB3DF8271643AA0091D1B1 /* Group.swift */,
-				F7FB3DFA271643B10091D1B1 /* Person.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,15 +151,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7040FF22716520B00B913AC /* GroupsTableViewController.swift in Sources */,
-				3EFE2A11279E19E60004A5F0 /* PersonController.swift in Sources */,
-				F7FB3DF9271643AA0091D1B1 /* Group.swift in Sources */,
-				F7040FF72716528200B913AC /* PersonDetailViewController.swift in Sources */,
 				F7FB3DE527163FDB0091D1B1 /* AppDelegate.swift in Sources */,
 				F7FB3DE727163FDB0091D1B1 /* SceneDelegate.swift in Sources */,
-				F7FB3E0027164A4E0091D1B1 /* PeopleTableViewController.swift in Sources */,
-				F7FB3DFB271643B10091D1B1 /* Person.swift in Sources */,
-				F7FB3DFE271649D20091D1B1 /* GroupController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
