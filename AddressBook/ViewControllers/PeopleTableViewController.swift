@@ -16,11 +16,13 @@ class PeopleTableViewController: UITableViewController {
     var group: Group?
     
     private var filteredPeople: [Person] {
-        if favoritesOnlyToggle.isOn {
-            return group?.people.filter { $0.isFavorite } ?? []
-        } else {
-            return group?.people ?? []
-        }
+//        if favoritesOnlyToggle.isOn {
+//            return group?.people.filter { $0.isFavorite } ?? []
+//        } else {
+//            return group?.people ?? []
+//        }
+        
+        return favoritesOnlyToggle.isOn ? group?.people.filter { $0.isFavorite} ?? [] : group?.people ?? []
     }
 
     // MARK: - Lifecycle Methods
