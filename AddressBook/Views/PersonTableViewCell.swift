@@ -28,11 +28,13 @@ class PersonTableViewCell: UITableViewCell {
     
     // MARK: - Methods
     func updateViews() {
-        guard let person = person else { return }
-        personNameLabel.text = person.name
-        let favoriteImageName = person.isFavorite ? "star.fill" : "star"
-        let favoriteImage = UIImage(systemName: favoriteImageName)
-        favoriteButton.setImage(favoriteImage, for: .normal)
+        if let person {
+            personNameLabel.text = person.name
+            let favoriteImageName = person.isFavorite ? "star.fill" : "star"
+            let favoriteImage = UIImage(systemName: favoriteImageName)
+            favoriteButton.setImage(favoriteImage, for: .normal)
+            
+        }
     }
     
     // MARK: - IBActions
