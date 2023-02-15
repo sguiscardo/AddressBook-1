@@ -12,7 +12,7 @@ class PersonDetailViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
-    @IBOutlet weak var favoriteBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var favoriteBarButtonItem: UIButton!
     
     // MARK: - Properties
     let personController = GroupController.shared
@@ -35,7 +35,7 @@ class PersonDetailViewController: UIViewController {
         guard let person = person else { return }
         let favoriteImageName = person.isFavorite ? "star.fill" : "star"
         let favoriteImage = UIImage(systemName: favoriteImageName)
-        favoriteBarButtonItem.image = favoriteImage
+        favoriteBarButtonItem.setImage(favoriteImage, for: .normal)
     }
     
     // MARK: - IBActions
@@ -43,13 +43,13 @@ class PersonDetailViewController: UIViewController {
         guard let person = person,
               let name = nameTextField.text,
               let address = addressTextField.text else { return }
-        PersonController.sharedPerson.update(person: person, name: name, address: address)
+        PersonController.update(person: person, name: name, address: address)
         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func favoriteButtonTapped(_ sender: Any) {
         guard let person = person else { return }
-        PersonController.sharedPerson.toggleFavorite(person: person)
-        updateFavoriteButton()
+        PersonController.toggleFavorite(person: person)
+        updateViews()
     }
 }

@@ -45,7 +45,8 @@ class PeopleTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell", for: indexPath) as? PersonTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell", for: indexPath) as?
+                PersonTableViewCell else { return UITableViewCell() }
         let person = filteredPeople[indexPath.row]
         cell.person = person
         cell.delegate = self
@@ -56,7 +57,7 @@ class PeopleTableViewController: UITableViewController {
         if editingStyle == .delete {
             guard let group = group else { return }
             let person = filteredPeople[indexPath.row]
-            PersonController.sharedPerson.delete(person: person, in: group)
+            PersonController.delete(person: person, in: group)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
@@ -74,7 +75,7 @@ class PeopleTableViewController: UITableViewController {
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
         guard let group = group else { return }
         let oldPersonCount = filteredPeople.count
-        PersonController.sharedPerson.createPerson(group: group)
+        PersonController.createPerson(group: group)
         let newPersonCount = filteredPeople.count
         guard newPersonCount > oldPersonCount else { return }
         let newRow = filteredPeople.count - 1
@@ -88,11 +89,12 @@ class PeopleTableViewController: UITableViewController {
 }
 
 // MARK: PersonTableViewCellDelegate Conformance
-extension PeopleTableViewController: PersonTableViewCellDelegate {
-    
-    func toggleFavoriteButtonWasTapped(cell: PersonTableViewCell) {
-        guard let person = cell.person else { return }
-        PersonController.sharedPerson.toggleFavorite(person: person)
-        tableView.reloadData()
-    }
-}
+//extension PeopleTableViewController: PersonTableViewCellDelegate {
+//
+//    func toggleFavoriteButtonWasTapped(cell: PersonTableViewCell) {
+//        guard let person = cell.person else { return }
+//        PersonController.toggleFavorite(person: person)
+//        tableView.reloadData()
+//    }
+
+
