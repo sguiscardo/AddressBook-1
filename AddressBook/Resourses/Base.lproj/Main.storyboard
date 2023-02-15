@@ -220,7 +220,7 @@
                         <rightBarButtonItems>
                             <barButtonItem image="star.fill" catalog="system" id="3K5-8U-96q">
                                 <connections>
-                                    <action selector="favoriteButtonTapped:" destination="RhT-1e-pN6" id="8yB-WW-Dyh"/>
+                                    <action selector="favoriteButtonTapped:" destination="ppV-ng-uxc" id="a8o-2j-bt7"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="save" id="BCk-WY-Gn5">
@@ -237,6 +237,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r8Q-Y8-Yf0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ppV-ng-uxc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1952" y="-159"/>
         </scene>

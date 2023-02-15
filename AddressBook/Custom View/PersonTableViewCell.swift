@@ -14,6 +14,13 @@ protocol PersonTableViewCellDelegate: AnyObject {
 
 class PersonTableViewCell: UITableViewCell {
     
+    
+    var person: Person? {
+        didSet {
+            updateViews()
+        }
+    }
+    
     // MARK: - Outlets
     @IBOutlet weak var personNameLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
@@ -24,7 +31,21 @@ class PersonTableViewCell: UITableViewCell {
     // MARK: - Methods
     
     
+
+    // MARK: - Helper Function
+    
+    func updateViews() {
+        guard let person = person else { return }
+        personNameLabel.text = person.name
+    }
+    
     // MARK: - IBActions
+    
+    @IBAction func favoriteButtonTapped(_ sender: UIButton) {
+        
+        
+        
+    }
     
 }
 
