@@ -22,6 +22,7 @@ class PersonDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateViews()
+        
     }
     
     func updateViews() {
@@ -50,6 +51,6 @@ class PersonDetailViewController: UIViewController {
     @IBAction func favoriteButtonTapped(_ sender: Any) {
         guard let person = person else { return }
         PersonController.toggleFavorite(person: person)
-        updateViews()
+        self.navigationController?.popViewController(animated: true)
     }
 }
