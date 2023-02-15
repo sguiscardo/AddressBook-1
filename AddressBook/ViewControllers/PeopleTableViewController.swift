@@ -95,7 +95,7 @@ extension PeopleTableViewController: PersonTableViewCellDelegate {
     func toggleFavoriteButtonWasTapped(cell: PersonTableViewCell) {
         guard let person = cell.person else { return }
         PersonController.toggleFavorite(person: person)
-        cell.updateViews()
+        tableView.reloadData()
         
     }
 }

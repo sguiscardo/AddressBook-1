@@ -132,6 +132,9 @@
                                                     <rect key="frame" x="336" y="0.0" width="22" height="45"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" image="star.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="favoriteButtonTapped:" destination="kZa-2c-dJY" eventType="touchUpInside" id="k7Q-2v-pJA"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -217,24 +220,23 @@
                         <rightBarButtonItems>
                             <barButtonItem image="star.fill" catalog="system" id="3K5-8U-96q">
                                 <connections>
-                                    <action selector="favoriteButtonTapped:" destination="ppV-ng-uxc" id="a8o-2j-bt7"/>
+                                    <action selector="favoriteButtonTapped:" destination="RhT-1e-pN6" id="KqV-Xw-xaM"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="save" id="BCk-WY-Gn5">
                                 <connections>
-                                    <action selector="saveButtonTapped:" destination="RhT-1e-pN6" id="J55-6k-IiI"/>
+                                    <action selector="saveButtonTapped:" destination="RhT-1e-pN6" id="cFr-AN-Ofs"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="addressTextField" destination="EsZ-rL-Ppu" id="Wf8-89-1ik"/>
-                        <outlet property="favoriteBarButtonItem" destination="3K5-8U-96q" id="6IY-1j-q2O"/>
+                        <outlet property="favoriteButton" destination="3K5-8U-96q" id="oQB-qd-Yks"/>
                         <outlet property="nameTextField" destination="Svq-r2-xLA" id="qEU-tT-cge"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r8Q-Y8-Yf0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="ppV-ng-uxc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1952" y="-159"/>
         </scene>

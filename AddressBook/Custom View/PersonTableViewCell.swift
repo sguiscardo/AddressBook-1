@@ -18,10 +18,8 @@ class PersonTableViewCell: UITableViewCell {
     var person: Person? {
         didSet {
             updateViews()
-            
         }
     }
-    
     
     // MARK: - Outlets
     @IBOutlet weak var personNameLabel: UILabel!
@@ -30,17 +28,12 @@ class PersonTableViewCell: UITableViewCell {
     weak var delegate: PersonTableViewCellDelegate?
     
 
-    
-    
-    // MARK: - Methods
-    
-    
-
     // MARK: - Helper Function
     
     func updateViews() {
         guard let person = person else { return }
         personNameLabel.text = person.name
+        updateFavoriteButton()
     }
     func updateFavoriteButton() {
         guard let person = person else { return }
@@ -54,8 +47,6 @@ class PersonTableViewCell: UITableViewCell {
     @IBAction func favoriteButtonTapped(_ sender: UIButton) {
         
         delegate?.toggleFavoriteButtonWasTapped(cell: self)
-        
-        
         
     }
     
