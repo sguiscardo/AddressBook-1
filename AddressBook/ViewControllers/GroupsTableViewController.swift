@@ -9,7 +9,7 @@ import UIKit
 
 class GroupsTableViewController: UITableViewController {
     
-    let personController = PersonController.shared
+    let personController = GroupController.shared
     
     // MARK: - Lifecycle Methods
     override func viewWillAppear(_ animated: Bool) {
@@ -49,8 +49,8 @@ class GroupsTableViewController: UITableViewController {
     
     // MARK: - IBActions
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
-        personController.createContactGroup()
-        let newRow = personController.groups.count - 1
+        GroupController.shared.createPersonInGroups()
+        let newRow = GroupController.shared.groups.count - 1
         let indexPath = IndexPath(row: newRow, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
     }

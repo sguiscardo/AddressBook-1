@@ -12,7 +12,7 @@ class PeopleTableViewController: UITableViewController {
     @IBOutlet weak var groupNameTextField: UITextField!
     @IBOutlet weak var favoritesOnlyToggle: UISwitch!
     
-    let personController = PersonController.shared
+    let personController = GroupController.shared
     var group: Group?
     
     private var filteredPeople: [Person] {
@@ -56,7 +56,7 @@ class PeopleTableViewController: UITableViewController {
         if editingStyle == .delete {
             guard let group = group else { return }
             let person = filteredPeople[indexPath.row]
-            personController.delete(person: person, in: group)
+            PersonController.sharedPerson.delete(person: person, in: group)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
@@ -74,7 +74,7 @@ class PeopleTableViewController: UITableViewController {
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
         guard let group = group else { return }
         let oldPersonCount = filteredPeople.count
-        personController.createPerson(group: group)
+        PersonController.sharedPerson.createPerson(group: group)
         let newPersonCount = filteredPeople.count
         guard newPersonCount > oldPersonCount else { return }
         let newRow = filteredPeople.count - 1
@@ -92,7 +92,7 @@ extension PeopleTableViewController: PersonTableViewCellDelegate {
     
     func toggleFavoriteButtonWasTapped(cell: PersonTableViewCell) {
         guard let person = cell.person else { return }
-        personController.toggleFavorite(person: person)
+        PersonController.sharedPerson.toggleFavorite(person: person)
         tableView.reloadData()
     }
 }
