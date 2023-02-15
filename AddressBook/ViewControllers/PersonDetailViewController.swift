@@ -12,7 +12,7 @@ class PersonDetailViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
-    @IBOutlet weak var favoriteBarButtonItem: UIButton!
+    @IBOutlet weak var favoriteBarButtonItem: UIBarButtonItem!
     
     // MARK: - Properties
     let personController = GroupController.shared
@@ -36,7 +36,7 @@ class PersonDetailViewController: UIViewController {
         guard let person = person else { return }
         let favoriteImageName = person.isFavorite ? "star.fill" : "star"
         let favoriteImage = UIImage(systemName: favoriteImageName)
-        favoriteBarButtonItem.setImage(favoriteImage, for: .normal)
+        favoriteBarButtonItem.image = favoriteImage
     }
     
     // MARK: - IBActions

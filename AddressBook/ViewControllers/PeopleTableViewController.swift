@@ -81,6 +81,7 @@ class PeopleTableViewController: UITableViewController {
         let newRow = filteredPeople.count - 1
         let indexPath = IndexPath(row: newRow, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
+
     }
     
     @IBAction func favoritesOnlySwitchToggled(_ sender: UISwitch) {
@@ -89,12 +90,14 @@ class PeopleTableViewController: UITableViewController {
 }
 
 // MARK: PersonTableViewCellDelegate Conformance
-//extension PeopleTableViewController: PersonTableViewCellDelegate {
-//
-//    func toggleFavoriteButtonWasTapped(cell: PersonTableViewCell) {
-//        guard let person = cell.person else { return }
-//        PersonController.toggleFavorite(person: person)
-//        tableView.reloadData()
-//    }
+extension PeopleTableViewController: PersonTableViewCellDelegate {
+    
+    func toggleFavoriteButtonWasTapped(cell: PersonTableViewCell) {
+        guard let person = cell.person else { return }
+        PersonController.toggleFavorite(person: person)
+        cell.updateViews()
+        
+    }
+}
 
 
